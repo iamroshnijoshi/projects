@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instgram </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "gilroy";
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #card{
+            height: 420px;
+            background-color:white ;
+            width: 300px;
+            border-radius: 15px;
+            border: 3px solid #dadada;
+            position: relative;
+            overflow: hidden;
+
+        }
+        #storyan{
+            height: 120px;
+            width: 100%;
+            /* background-color: rgb(154, 12, 12); */
+            border-bottom: 1px  solid #dadada;
+            padding: 15px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        #storyan::-webkit-scrollbar{
+            display: none;
+        }
+        .story{
+            /* background-color: blue; */
+            border: 3px solid red;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 5px;
+            
+        }
+        .story img{
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        #full-screen{
+            height: 100%;
+            width: 100%;
+            /* background-color: red; */
+            background-size: cover;
+            position:absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <div id="full-screen"></div>
+        <h2>iamroshnijoshi</h2>
+        <div id="storyan">
+<!-- <div class="story">
+    <img src="beautiful.jpg" alt="">
+</div> -->
+<!-- <div class="story">
+    <img src="https://images.unsplash.com/photo-1616588589676-62b3bd4ff6d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="">
+</div> -->
+<!--  <div class="story">
+    <img src="https://images.unsplash.com/photo-1494386346843-e12284507169?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="">
+</div> -->
+<!-- <div class="story">
+    <img src="https://images.unsplash.com/photo-1694704238113-313fccb7b1f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1518&q=80" alt="">
+</div> --> 
+<!-- <div class="story">
+    <img src="https://images.unsplash.com/photo-1694704238113-313fccb7b1f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1518&q=80" alt="">
+</div> -->
+<!-- <div class="story">
+    <img src="https://images.unsplash.com/photo-1694704238113-313fccb7b1f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1518&q=80" alt="">
+</div> -->
+        </div>
+    </div>
+    <script>
+        var arr =[
+            {dp:'rj.jpg',story:"https://images.unsplash.com/photo-1513001900722-370f803f498d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"},
+            {dp:'https://images.unsplash.com/photo-1485988412941-77a35537dae4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1496&q=80',story:"https://images.unsplash.com/photo-1466583985723-b74122659346?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"},
+            {dp:'beautiful.jpg',story:"https://plus.unsplash.com/premium_photo-1670963024976-62ae850de483?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"},
+            {dp:'https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1465&q=80',story:"https://plus.unsplash.com/premium_photo-1670963024976-62ae850de483?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"},   
+            
+        ]
+        var storyan = document.querySelector("#storyan")
+        var clutter = ""
+        arr.forEach(function(elem,idx){
+            // console.log(elem,idx);
+clutter += `<div class="story">
+    <img id="${idx}" src="${elem.dp}" alt="">
+</div>`
+        })
+        // console.log(clutter)
+        storyan.innerHTML = clutter
+        storyan.addEventListener("click",function(dets){
+        //  var value= arr[dets.target.id].story
+        document.querySelector("#full-screen").style.display  = "block"
+        document.querySelector("#full-screen").style.backgroundImage = `url(${arr[dets.target.id].story})`
+    })
+    </script>
+</body>
+</html>
